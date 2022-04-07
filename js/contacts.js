@@ -69,6 +69,7 @@ function init(){
       iconImageOffset: [-10, -10]
     });
 
+    myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects.add(myPlacemark);
 
     var myMap = new ymaps.Map("mapTable", {
@@ -84,6 +85,7 @@ function init(){
       iconImageOffset: [-10, -10]
     });
 
+    myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects.add(myPlacemarkTable);
 
     var myMap = new ymaps.Map("mapMobile", {
@@ -99,6 +101,7 @@ function init(){
       iconImageOffset: [-10, -10]
     });
 
+    myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects.add(myPlacemarkMobile);
 
 };
