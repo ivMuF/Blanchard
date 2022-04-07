@@ -1505,6 +1505,7 @@ html {
   margin-bottom: 6px;
 }
 
+.catalog__link,
 .accordion__link {
   position: relative;
   width: 85px;
@@ -1517,10 +1518,12 @@ html {
   cursor: pointer;
 }
 
+.catalog__link-text,
 .accordion__link-text {
   position: relative;
 }
 
+.catalog__link::before,
 .accordion__link::before {
   content: "";
   position: absolute;
@@ -1533,10 +1536,12 @@ html {
   transition: transform var(--short);
 }
 
+.catalog__link-hover,
 .accordion__link-hover {
   color: var(--violet-middle);
 }
 
+.catalog__link-hover::after,
 .accordion__link-hover::after {
   content: "";
   position: absolute;
@@ -1550,18 +1555,22 @@ html {
   transition: transform var(--short);
 }
 
+.catalog__link-hover:hover::after,
 .accordion__link-hover:hover::after {
   transform: scaleX(1);
 }
 
+.catalog__link:active,
 .accordion__link:active {
   color: var(--violet-dark);
 }
 
+.catalog__link:focus:not(:hover):not(:active):before,
 .accordion__link:focus:not(:hover):not(:active):before {
   transform: scaleX(1);
 }
 
+.catalog__link:focus:not(:active),
 .accordion__link:focus:not(:active) {
   outline: none;
   color: var(--text-ligth);
