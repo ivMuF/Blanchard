@@ -8,12 +8,14 @@
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/simplbar.css"/>
   <link rel="stylesheet" href="/css/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="/css/justValidateTooltip.min.css">
   <link rel="stylesheet" href="/css/style.css">
 
   <script src="/js/simplebar.min.js" defer></script>
   <script src="/js/swiper-bundle.min.js" defer></script>
   <script src="/js/top-wrapper.js" defer></script>
   <script src="/js/js-header.js" defer></script>
+  <script src="/js/scroll.js" defer></script>
   <script src="/js/toggel-form.js" defer></script>
   <script src="/js/burger.js" defer></script>
   <script src="/js/choices.min.js" defer></script>
@@ -26,10 +28,11 @@
   <script src="https://unpkg.com/tippy.js@6" defer></script>
   <script src="/js/tooltip.js" defer></script>
   <script src="/js/projects-slider.js" defer></script>
-  <script src="/js/just-validate.min.js" defer></script>
-  <script src="/js/inputmask.min.js" defer></script>
+  <script src="/js/just-validate.min.js"></script>
+  <script src="/js/inputmask.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU" defer></script>
-  <script src="/js/contacts.js" defer></script>
+  <script src="/js/contacts-form.js" defer></script>
+  <script src="/js/contacts-map.js" defer></script>
 </head>
 
 <body>
@@ -50,25 +53,25 @@
           <nav class="header__top-nav js-menu-wrap">
             <ul class="header__top-list">
               <li class="header__top-item">
-                <a class="header__top-link" href=""><span class="header__top-link-text">О&nbsp;нас</span></a>
+                <a class="header__top-link js-scroll-link js-menu-link" href="#aboutUs"><span class="header__top-link-text">О&nbsp;нас</span></a>
               </li>
               <li class="header__top-item">
-                <a class="header__top-link" href=""><span class="header__top-link-text">Галерея</span></a>
+                <a class="header__top-link js-scroll-link js-menu-link" href="#gallery"><span class="header__top-link-text">Галерея</span></a>
               </li>
               <li class="header__top-item">
-                <a class="header__top-link" href=""><span class="header__top-link-text">Каталог</span></a>
+                <a class="header__top-link js-scroll-link js-menu-link" href="#catalog"><span class="header__top-link-text">Каталог</span></a>
               </li>
               <li class="header__top-item">
-                <a class="header__top-link" href=""><span class="header__top-link-text">События</span></a>
+                <a class="header__top-link js-scroll-link js-menu-link" href="#event"><span class="header__top-link-text">События</span></a>
               </li>
               <li class="header__top-item">
-                <a class="header__top-link" href=""><span class="header__top-link-text">Издания</span></a>
+                <a class="header__top-link js-scroll-link js-menu-link" href="#projects"><span class="header__top-link-text">Издания</span></a>
               </li>
               <li class="header__top-item">
-                <a class="header__top-link" href=""><span class="header__top-link-text">Проекты</span></a>
+                <a class="header__top-link js-scroll-link js-menu-link" href="#projects"><span class="header__top-link-text">Проекты</span></a>
               </li>
               <li class="header__top-item">
-                <a class="header__top-link" href=""><span class="header__top-link-text">Контакты</span></a>
+                <a class="header__top-link js-scroll-link js-menu-link" href="#contacts"><span class="header__top-link-text">Контакты</span></a>
               </li>
             </ul>
             <a class="header__top-login" href="">
@@ -382,7 +385,7 @@
     </div>
   </div>
 
-  <section class="aboutUs">
+  <section class="aboutUs" id="aboutUs">
 
     <div class="container padding">
 
@@ -396,7 +399,7 @@
 
   </section>
 
-  <section class="gallery">
+  <section class="gallery" id="gallery">
     <div class="container padding gallery-background">
       <div class="gallery__content-wrap">
         <div class="gallery__text">
@@ -411,14 +414,21 @@
           </div>
           <div class="gallery__bottom">
 
-            <input type="checkbox" class="gallery__custom-checkbox" id="XIXвек" name="XIXвек" value="yes">
-            <label style="width: 80px;" for="XIXвек">XIX век</label>
-
-            <input type="checkbox" class="gallery__custom-checkbox" id="XXвек" name="XXвек" value="yes">
-            <label style="width: 80px;" for="XXвек">XX век</label>
-
-            <input type="checkbox" class="gallery__custom-checkbox" id="Современность" name="Современность" value="yes">
-            <label style="width: 150px;" for="Современность">Современность</label>
+            <label class="gallery__label">
+              <input class="visually-hidden gallery__checkbox" type="checkbox">
+              <span class="gallery__visible-checkbox"></span>
+              <span class="gallery__check-text">XIX век</span>
+            </label>
+            <label class="gallery__label">
+              <input class="visually-hidden gallery__checkbox" type="checkbox">
+              <span class="gallery__visible-checkbox"></span>
+              <span class="gallery__check-text">XX век</span>
+            </label>
+            <label class="gallery__label">
+              <input class="visually-hidden gallery__checkbox" type="checkbox">
+              <span class="gallery__visible-checkbox"></span>
+              <span class="gallery__check-text">Современность</span>
+            </label>
 
           </div>
         </div>
@@ -490,7 +500,7 @@
     </div>
   </section>
 
-  <section class="catalog">
+  <section class="catalog" id="catalog">
 
     <div class="container padding">
       <h2 class="catalog__h2 section-title">Каталог</h2>
@@ -897,7 +907,7 @@
 
   </section>
 
-  <section  class="event">
+  <section  class="event" id="event">
     <div class="container padding">
 
       <h2 class="event__h2 section-title">События</h2>
@@ -1059,13 +1069,13 @@
     </div>
   </section>
 
-  <section class="projects">
+  <section class="projects" id="projects">
     <div class="container padding">
 
       <h2 class="projects__h2 section-title">Проекты</h2>
 
       <p class="projects__p text">
-        Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <button class="projects__tooltip js-tooltip-btn" data-tippy-content="Tooltip3">i</button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <button class="projects__tooltip js-tooltip-btn" data-tippy-content="Tooltip3">i</button> исключительно в разрезе маркетинговых и&nbsp;финансовых <button class="projects__tooltip js-tooltip-btn" data-tippy-content="Tooltip3">i</button> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее:
+        Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <button class="projects__tooltip js-tooltip-btn" data-tippy-content="Пример современных тенденций - современная мотодология разработки">i</button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <button class="projects__tooltip js-tooltip-btn" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции">i</button> исключительно в разрезе маркетинговых и&nbsp;финансовых <button class="projects__tooltip js-tooltip-btn" data-tippy-content="В стремлении повысить качество">i</button> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее:
         <a class="projects__link projects__link-hover projects__link--display-1" href="#"><span class="projects__link-text">blanchard-art.ru/projects</span></a>
 
         <a class="projects__link projects__link-hover projects__link--display-2" href="#"><span class="projects__link-text">blanchard-art.ru</span></a>
@@ -1127,9 +1137,9 @@
 
   </section>
 
-  <section class="contacts">
+  <section class="contacts" id="contacts">
 
-    <div class="container padding">
+    <div class="container padding border">
 
       <div class="contacts__content">
 
@@ -1141,27 +1151,28 @@
 
         </div>
 
-        <form class="contacts__form contacts-js" method="post" action="#">
-
-          <input class="contacts__input"
-          name="Имя"
-          type="text"
-          placeholder="Имя*"
-          data-validate-filed="name"
-          pattern="[a-zA-Z]+"
+        <form class="contacts__form js-contacts" action="#">
+          <div class="just-validate-tooltip-container">
+            <input class="contacts__input"
+            name="Имя"
+            type="text"
+            placeholder="Имя*"
+            data-validate-field="name"
+            pattern="[a-zA-Z]+"
+            >
+          </div>
+          <div class="just-validate-tooltip-container">
+            <input class="contacts__input"
+            name="tel"
+            type="tel"
+            placeholder="Телефон*"
+            data-validate-field="tel"
+            data-validate-rules="phone"
           >
-
-          <input class="contacts__input"
-          name="tel"
-          type="tel"
-          placeholder="Телефон*"
-          data-validate-filed="tel"
-          >
-
+          </div>
           <button class="contacts__btn btn-contacts">Заказать обратный звонок</button>
 
           <button class="contacts__btn-small btn-contacts">Заказать</button>
-
         </form>
 
         <div class="contacts__massager">
@@ -1183,7 +1194,7 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.05312 19.7889L20.7167 14.7649C26.271 12.4547 27.425 12.0534 28.1773 12.0402C28.3428 12.0373 28.7127 12.0783 28.9523 12.2727C29.1547 12.4369 29.2103 12.6587 29.237 12.8143C29.2636 12.9699 29.2968 13.3246 29.2704 13.6017C28.9694 16.7641 27.667 24.4386 27.0045 27.9806C26.7241 29.4794 26.1725 29.9819 25.6377 30.0311C24.4762 30.138 23.5943 29.2635 22.4694 28.5261L18.006 25.528C16.0314 24.2268 17.3114 23.5116 18.4368 22.3428C18.7313 22.0368 23.8486 17.3823 23.9476 16.96C23.9596 16.9072 23.9715 16.7104 23.8546 16.6064C23.7376 16.5024 23.565 16.5384 23.4404 16.5663C23.2639 16.6064 20.4519 18.465 15.0044 22.1423C14.2062 22.6904 13.4832 22.9575 12.8354 22.9435C12.1213 22.9281 10.7477 22.5397 9.72652 22.2078C8.474 21.8007 7.47852 21.5854 7.56524 20.8939C7.61036 20.5338 8.10632 20.1655 9.05308 19.789L9.05312 19.7889Z" fill="white"/>
                 <defs>
                 <lineargradient id="paint0_linear_136320_63" x1="20" y1="0" x2="20" y2="39.7033" gradientunits="userSpaceOnUse">
-                <stop stop-color="#2AABEE"/>
+                <stop stop-color="#2AABEE"  offset="0"/>
                 <stop offset="1" stop-color="#229ED9"/>
                 </lineargradient>
                 </defs>
@@ -1209,7 +1220,7 @@
 
   </section>
 
-  <section class="footer">
+  <footer class="footer">
 
     <div class="container">
 
@@ -1248,6 +1259,6 @@
       </div>
 
     </div>
-  </section>
+  </footer>
 </body>
 </html>
